@@ -158,9 +158,8 @@
             • <strong>Click Nodes</strong> to Expand/Collapse<br>
             • <strong>Hover</strong> for Details
             <div style="margin-top: 8px; border-top: 1px solid #eee; padding-top: 5px;">
-                <div class="legend-item"><span class="legend-color" style="border-color: #008000;"></span> Catalyst (Green)</div>
-                <div class="legend-item"><span class="legend-color" style="border-color: #d60000;"></span> Projects (Red)</div>
-                <div class="legend-item"><span class="legend-color" style="border-color: #007bff;"></span> Standard (Blue)</div>
+                <div class="legend-item"><span class="legend-color" style="border-color: #007bff;"></span> Main AFE (Blue)</div>
+                <div class="legend-item"><span class="legend-color" style="border-color: #008000;"></span> Different AFE (Green)</div>
             </div>
         </div>
     </div>
@@ -184,20 +183,16 @@
         "(D20034241)", 
         "(D20034242)", 
         "(D20034243)", 
-        "(D20034244)",
+        "(D20034244)"
+    ];
+
+    const redNodeIds = [
+        // Note: (D20034249) Minor PCRs is purposely excluded to remain default color
         "(D20034246)",
         "(D20034247)",
         "(D20034248)",
         "(D20034250)"
     ];
-
-    //const redNodeIds = [
-        // Note: (D20034249) Minor PCRs is purposely excluded to remain default color
-      //  "(D20034246)",
-        //"(D20034247)",
-  //      "(D20034248)",
-    //    "(D20034250)"
-    //];
 
     // Helper function to determine stroke color
     function getNodeColor(name) {
@@ -205,7 +200,7 @@
             return "#008000"; // Green
         }
         if (redNodeIds.some(id => name.includes(id))) {
-            return "#d60000"; // Red
+            return "#008000"; // Red
         }
         return "#007bff"; // Default Blue
     }
@@ -562,4 +557,3 @@
     </script>
 </body>
 </html>
-
